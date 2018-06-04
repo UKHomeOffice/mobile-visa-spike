@@ -1,0 +1,17 @@
+{{#fields}}
+  {{#value}}
+  <tr>
+    {{^raw}}
+      <td class="{{name}}-name">{{#t}}pages.check-your-answers.table.{{name}}{{/t}}</td>
+      <td class="{{name}}-value">{{value}}</td>
+    {{/raw}}
+    {{#raw}}
+      <td class="{{name}}-name">{{#t}}pages.check-your-answers.table.{{name}}{{/t}}</td>
+      <td class="{{name}}-value">{{{value}}}</td>
+    {{/raw}}
+    <td class="summary-change">
+      <a id="{{name}}-change" href="/apply{{step}}/edit#{{name}}" class="button">{{#t}}buttons.change{{/t}}</a>
+    </td>
+  </tr>
+  {{/value}}
+{{/fields}}

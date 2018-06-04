@@ -1,0 +1,18 @@
+#address-group {
+
+  .form-group {
+    margin-bottom: 0;
+    margin-top: -2px;
+    ~ .form-group input {
+      border-top-width: 1px;
+    }
+    &:not(:last-child) input {
+      border-bottom-width: 0;
+    }
+  }
+
+  .form-group-error {
+    padding-left: 0;
+    border-left: none;
+  }
+}

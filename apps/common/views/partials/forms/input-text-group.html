@@ -1,0 +1,25 @@
+<div id="{{id}}-group" class="form-group{{#error}} form-group-error{{/error}}{{#compound}} form-group-compound{{/compound}}{{^date}}{{/date}} {{#className}} {{className}}{{/className}}">
+  <label for="{{id}}" class="{{labelClassName}}">
+    {{{label}}}
+    {{#hint}}<span {{$hintId}}id="{{hintId}}" {{/hintId}}class="form-hint">{{{hint}}}</span>{{/hint}}
+    {{^date}}{{#error}}<span class="error-message">{{{error.message}}}</span>{{/error}}{{/date}}
+  </label>
+  <input
+    type="{{type}}"
+    name="{{id}}"
+    id="{{id}}"
+    class="form-control{{#error}} form-control-error{{/error}}"
+    aria-required="{{required}}"
+    {{#value}} value="{{value}}"{{/value}}
+    {{#min}} min="{{min}}"{{/min}}
+    {{#max}} max="{{max}}"{{/max}}
+    {{#maxlength}} maxlength="{{maxlength}}"{{/maxlength}}
+    {{#pattern}} pattern="{{pattern}}"{{/pattern}}
+    {{#hintId}} aria-describedby="{{hintId}}"{{/hintId}}
+    {{#error}} aria-invalid="true"{{/error}}
+    {{#autocomplete}} autocomplete="{{autocomplete}}"{{/autocomplete}}
+    {{#attributes}}
+      {{attribute}}="{{value}}"
+    {{/attributes}}
+  >
+</div>

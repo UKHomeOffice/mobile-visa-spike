@@ -1,0 +1,20 @@
+<div id="{{id}}-group" class="form-group{{#error}} form-group-error{{/error}} {{#compound}}form-group-compound{{/compound}}{{#className}} {{className}}{{/className}}">
+  <label for="{{id}}" class="{{labelClassName}}">
+    {{{label}}}
+    {{#hint}}<span {{$hintId}}id="{{hintId}}" {{/hintId}}class="form-hint">{{hint}}</span>{{/hint}}
+    {{#error}}<span class="error-message" aria-hidden="true">{{{error.message}}}</span>{{/error}}
+  </label>
+  <textarea
+    name="{{id}}"
+    id="{{id}}"
+    class="form-control{{#error}} form-control-error{{/error}}"
+    aria-required="{{required}}"
+    {{#maxlength}} maxlength="{{maxlength}}"{{/maxlength}}
+    {{#attributes}}
+      {{attribute}}="{{value}}"
+    {{/attributes}}
+    {{#hintId}} aria-describedby="{{hintId}}"{{/hintId}}
+    {{#error}} aria-invalid="true"{{/error}}
+  >{{value}}</textarea>
+</div>
+

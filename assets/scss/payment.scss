@@ -1,0 +1,24 @@
+.card {
+  float: left;
+  width: 51px;
+  height: 32px;
+  margin: -5px 10px 0 0;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  padding: 10px 32px;
+  @include media(mobile) {
+    width: auto;
+    height: auto;
+    padding: 16px 32px;
+    margin-right: 0;
+    background-size: contain;
+  }
+}
+
+.mastercard {
+  background-image: url("../images/cards/mastercard-2x.png");
+}
+
+.visa {
+  background-image: url("../images/cards/visa-2x.png");
+}

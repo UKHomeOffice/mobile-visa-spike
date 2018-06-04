@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>{{#t}}en.app.title{{/t}} for {{name}}</title>
+  <link href="{{hostUrl}}/public/stylesheets/pdf.css" rel="stylesheet" type="text/css" />
+  <style type="text/css">
+    .organisation-logo-stacked-ho-large {
+      background-image: url("{{hostUrl}}/public/images/crests/ho_crest_27px_x2.png?raw=true");
+      background-size: 45px;
+    }
+  </style>
+</head>
+<body>
+  <main id="content" role="main" class="evw container">
+    <div class="row">
+      <div class="warning">
+        <p class="important">You must print this document and show it when you travel</p>
+        <p class="important" dir="rtl">يجب ان تطبع هذا المستند وتظهره عندما تسافر</p>
+      </div>
+      <div class="col-sm-6">
+        <h1><span class="organisation-logo organisation-logo-stacked-ho organisation-logo-stacked-ho-large"><span class="font-xlarge">Home Office</span></span></h1>
+
+      </div>
+      <div class="col-sm-6">
+        <h1 class="text-right font-large pad-top-10">{{#t}}english.app.title{{/t}}</h1>
+        <h2 class="text-right font-large pad-top-60">{{evwNumber}}</h2>
+      </div>
+    </div>
+
+    <hr/>
+
+    <div class="row no-bottom travel-row flex-middle">
+      <div class="col-sm-2" style="margin-top:20px">
+        <p>{{#arrival.travelReference}}{{arrival.travelReference}}{{/arrival.travelReference}}{{^arrival.travelReference}}UK arrival{{/arrival.travelReference}}</p>
+      </div>
+      <div class="col-sm-5">
+        <div class="arrow-bg"></div>
+        {{#departure}}
+        <p>{{port}}<br/>
+          <span class="bold-medium">{{time}}</span><br/>
+          {{date}}</p>
+          {{/departure}}
+      </div>
+      <div class="col-sm-5">
+        {{#arrival}}
+        <p>{{port}}<br/>
+          <span class="bold-medium">{{time}}</span><br/>
+          {{date}}</p>
+          {{/arrival}}
+        </div>
+      </div>
+
+      <hr/>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <p class="item-title">Name / الاسم</p>
+          <span class="font-large">{{name}}</span>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="row no-pad">
+        <div class="col-sm-6" style="margin:10px 0">
+          <p class="item-title">Passport Number / رقم جواز السفر</p>
+          <p class="font-large">{{passportNumber}}</p>
+          <p class="item-title">Country of nationality / الجنسية:</p>
+          <p class="font-large">{{nationality}}</p>
+          <p class="item-title">Date of birth / تاريخ الميلاد</p>
+          <p class="font-large">{{dob}}</p>
+          <p class="signature-box">
+            Signature
+            <span class="right text-right">توقيع</span>
+          </p>
+        </div>
+        <div class="col-sm-6 bg-shaded">
+          <div class="row no-pad">
+            <div class="offical-box">
+              <span>CAT</span>
+            </div>
+            <div class="offical-box">
+              <span>-16</span>
+            </div>
+            <div class="offical-box">
+              <span>CODE</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="offical-box bg-white">
+              <p></p>
+            </div>
+            <div class="offical-box bg-white">
+              <p></p>
+            </div>
+            <div class="offical-box bg-white">
+              <p></p>
+            </div>
+          </div>
+          <div class="col-sm-12 bg-white" style="min-height:170px">
+            <p class="gray font-xsmall">For official use: Landing conditions and arrival date</p>
+          </div>
+        </div>
+      </div>
+
+      <hr/>
+
+      <div class="row disclaimer">
+        <div class="col-sm-6 font-xsmall">
+          <p class="bold-small">An electronic visa waiver (EVW) doesn't guarantee entry into the UK; this is decided by immigration officers at the UK border.</p>
+          <p>This EVW is for a single entry to the UK for up to 6 months.</p>
+          <p>An EVW can only be used by the person named on it.</p>
+          <p>All EVW users, including children, must have their own EVW document.</p>
+          <p>You must print out your EVW and show it when you get on your plane, train or boat and on arrival in the UK.</p>
+        </div>
+
+        <div class="col-sm-6 font-xsmall disclaimer-xsmall" dir="rtl">
+          <p class="bold-small">لا يضمن حيازتك على الإعفاء الإلكتروني من التأشيرة دخول المملكة المتحدة. يتخذ هذا القرار موظفي الهجرة عند حدود المملكة المتحدة.</p>
+          <p>يستخدم الإعفاء الإلكتروني من التأشيرة هذا لزيارة مفردة لا تتجاوز 6 شهور.</p>
+          <p>لا يمكن أن يستخدم الإعفاء، إلا الشخص المسمى به.</p>
+          <p>يجب على مستخدمي الإعفاء الإلكتروني من التأشيرة، بما فيه الأطفال، أن يكون معهم إعفاء خاص بهم. </p>
+          <p>يجب عليك ان تطبع الإعفاء الإلكتروني من التأشيرة وتظهره عندما تركب الطائرة او السفينة او القطار وايضا عند وصولك بالمملكة المتحدة.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
+

@@ -1,0 +1,16 @@
+{
+  "enter-your-details": {
+    "header": "Your electronic visa waiver is ready"
+  },
+  "download-your-evw": {
+    "header": "Download your electronic visa waiver",
+    "old-notice": "Your electronic visa waiver is valid for one entry into the UK. You must print out your document and show it when you travel or you may be refused entry to the UK.",
+    "notice": "Your electronic visa waiver is valid for one entry into the UK. You must show it when you travel or you may be refused entry to the UK. This can be either printed or displayed through a device"
+  },
+  "download-error": {
+    "title": "Electronic visa waiver not available",
+    "summary": "Your electronic visa waiver is not available because either:",
+    "point-1": "it is not verified yet - you should get an email when it is ready",
+    "point-2": "it is for a travel date in the past and has expired"
+  }
+}

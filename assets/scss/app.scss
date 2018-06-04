@@ -1,0 +1,425 @@
+@import "base";
+
+@import "alert.scss";
+@import "icons.scss";
+@import "complete";
+@import "indentpanels";
+@import "buttons";
+@import "payment";
+@import "address";
+@import "passport-image";
+@import "lists";
+@import "table";
+
+@mixin splitsy($colwidth:50%, $mobilecolwidth:100%, $margin-bottom: auto) {
+  max-width: $colwidth;
+
+  @include media(mobile) {
+    max-width: none;
+    width: $mobilecolwidth;
+    float: left;
+  }
+}
+
+@mixin split-spans($colwidth:48%, $mobilecolwidth:100%, $margin-bottom:1em) {
+  box-sizing: border-box;
+  float: left;
+  width: 100%;
+  [lang="en"],
+  [lang="ar"] {
+    float: left;
+    position: relative;
+    @include splitsy($colwidth, $mobilecolwidth, $margin-bottom);
+  }
+  [lang="en"] {
+    clear: left;
+  }
+  [lang="ar"] {
+    float: right;
+    clear: right;
+  }
+  // clearfix
+  &:after {
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+h1,
+h2,
+h3,
+ul,
+details,
+legend,
+label,
+.split-spans,
+.flight-hint,
+.error-summary,
+.error-message,
+.form-hint {
+  @include split-spans;
+}
+
+.split-spans {
+  p {
+    float: left;
+    word-wrap: break-word;
+  }
+  a span {
+    text-decoration: underline;
+  }
+}
+
+// needed to allow red error band to
+// travel full length of left border
+legend {
+  float: left;
+}
+
+details {
+  float: none;
+  [lang="en"]{
+    float: none;
+  }
+  summary::-webkit-details-marker {
+    margin-right: 5px;
+  }
+  summary {
+    display: block;
+    width: 100%;
+    margin-bottom: 1em;
+    span {
+      text-decoration: underline;
+    }
+    @include media(mobile) {
+      [lang="ar"] {
+        float: right;
+        width: auto;
+      }
+    }
+  }
+  .panel-indent.split-spans {
+    border-left-width: 5px;
+    border-right-width: 5px;
+  }
+}
+
+.multiple-choice {
+  span {
+    float: none;
+  }
+  @include media(mobile) {
+    float: left;
+    span {
+      float: left;
+      &[lang="ar"] {
+        padding-left: 0;
+        padding-right: 20px;
+      }
+    }
+  }
+}
+
+.flight-hint {
+  margin: 10px 0;
+}
+
+p.icon-important {
+  @include split-spans(42%);
+  @include media(mobile) {
+    [lang='ar'],
+    [lang='en'] {
+      width: auto;
+    }
+  }
+}
+
+label [lang="ar"],
+legend [lang="ar"] {
+  padding-left: 20px;
+}
+
+.button {
+  margin-top: 20px;
+  span {
+    float: left;
+    position: relative;
+    padding: 5px 10px;
+  }
+  @include media(mobile) {
+    margin-top: 0;
+    [lang="ar"] {
+      float: right;
+      font-size: 120%;
+    }
+  }
+}
+
+.button[type="done"] {
+  margin-top: 5px;
+}
+
+
+
+// fieldset reset
+fieldset {
+  width: auto;
+  padding-bottom: 10px;
+}
+
+
+.phase-banner {
+  @include phase-banner();
+}
+
+#step {
+  @include core-16;
+  a {
+    display: inline-block;
+    margin-top: $gutter-half;
+    padding-left: 14px;
+    border-bottom: $black 1px solid;
+    color: $black;
+    text-decoration: none;
+    background: url("../images/icons/icon-caret-left.png") no-repeat 0 4px;
+    @include media(mobile) {
+      background-position: 0 1px;
+    }
+    margin-right: 14px;
+  }
+
+  span {
+    display: inline-block;
+    margin-top: $gutter-half;
+    color: $secondary-text-colour;
+  }
+}
+
+h1 {
+  @include bold-24;
+
+  [lang="en"] {}
+  [lang="ar"] {
+    float: right;
+  }
+  @include media(mobile) {
+    &.heading-large {
+      margin-top: .5em;
+    }
+    [lang="en"],
+    [lang="ar"] {
+      padding-bottom: .5em;
+    }
+  }
+}
+
+.form-label-bold {
+  @include bold-19;
+}
+
+//autocomplete styling
+.tt-menu {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  width: 65%;
+}
+
+.tt-suggestion {
+  padding: 0.5em;
+
+  &:hover,
+  &.tt-cursor {
+    color: #fff;
+    background-color: #266CB0;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.twitter-typeahead {
+  width: 100%;
+}
+
+//custom form styling
+.form-control-error {
+  border: 4px solid $error-colour;
+}
+
+.form-control {
+  border: 2px solid #6f777b;
+  &.form-control-error {
+    border: 4px solid $error-colour;
+  }
+
+  @include media(desktop) {
+    width: 65%;
+  }
+}
+
+.form-group {
+  margin: 15px 0;
+}
+
+// GOVUK Elements `.form-date` overrides
+.form-date {
+  border-left: none;
+  padding-left: 0;
+
+  label {
+    @include core-19();
+  }
+
+  .form-group {
+    margin-right: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+
+    @include media(mobile) {
+      margin-top: 0;
+    }
+
+    input {
+      &[id$="-year"] {
+        width: 70px;
+      }
+    }
+  }
+}
+
+.form-group-error {
+  clear: left;
+  .form-control {
+    border: 4px solid $error-colour;
+  }
+}
+
+#delivery-details {
+  width: 100%;
+}
+
+.flight-details {
+  td {
+    @include core-19();
+  }
+
+}
+
+#plane-flight-number {
+  width: 110px;
+}
+
+#accept-declaration-group {
+  margin: 0 0 5px;
+}
+
+// Arabic font-size adjustments
+[lang="ar"] {
+  direction: rtl;
+  font-size: 1.122em;
+}
+h1 [ lang="ar"],
+label [ lang="ar"] {
+  font-size: 115%;
+}
+
+td[lang="ar"] {
+  text-align: right;
+  display: table-cell;
+  padding-right: 0;
+}
+
+.check-field input {
+  border-width: 1px;
+  font-size: 29px;
+  font-weight: 700;
+  padding: 15px;
+  width: 100%;
+}
+
+.check-your-name-list {
+  float: left;
+  width: 50%;
+}
+
+.form-group .form-hint {
+  color: $black;
+  @include core-19;
+  margin: 0;
+  @include media(mobile) {
+    margin: 1em 0;
+  }
+}
+
+.ineligible-to-apply-intro {
+  margin-top: 45px;
+}
+
+#plane-time-of-departure-group {
+  legend {
+    padding-top: 30px;
+  }
+}
+
+.train-details-arrival {
+  border-top: 1px solid $grey-2;
+  padding-top: 10px;
+}
+
+.js-enabled {
+  select.typeahead {
+    display: none;
+  }
+}
+
+.home-address-1-value, .uk-address-1-value {
+  white-space: pre;
+}
+
+// Hide, only when JavaScript is enabled
+.js-enabled .js-hidden {
+  display: none;
+}
+
+pre {
+  background: #fcfcfc;
+  border: 1px solid #bfc1c3;
+  padding: 1em;
+  margin: 0 0 30px 0;
+  overflow: auto;
+  color: #0b0c0c;
+  text-shadow: 0 1px #fff;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 14px;
+  direction: ltr;
+  text-align: left;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  word-spacing: normal;
+  word-break: normal;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word
+}
+
+.dont-break-out {
+  /* These are technically the same, but use both */
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+
+  -ms-word-break: break-all;
+  /* Instead use this non-standard one: */
+  word-break: break-word;
+}

@@ -1,0 +1,172 @@
+// Slides layout
+// ==========================================================================
+
+.slides {
+
+  header {
+    clear: both;
+    width: 100%;
+  }
+
+  .form-group {
+    margin: 0 0 30px;
+  }
+
+  background-color: $mainstream-brand;
+  color: $white;
+
+  margin-top: $gutter-half;
+  margin-bottom: $gutter-half;
+
+  @include media(tablet) {
+    margin-top: $gutter;
+  }
+
+  @include box-sizing(border-box);
+
+  padding: $gutter;
+
+  @include media(tablet) {
+    padding: $gutter * 1.5;
+  }
+
+  @include media(desktop) {
+    padding: 75px 70px;
+  }
+
+  h1 {
+    @include media (mobile) {
+      margin-top: $gutter-half;
+      margin-bottom: $gutter-half;
+    }
+
+    [lang="ar"] {
+      float: right;
+    }
+
+    margin-top: 0;
+    margin-bottom: $gutter;
+  }
+
+  p,
+  ul {
+    @include core-24;
+  }
+
+  a,
+  a:focus,
+  a:hover,
+  a:active {
+    color: inherit;
+  }
+
+  .button {
+    background: $white;
+    color: $mainstream-brand;
+    font-weight: bold;
+    margin-top: 0;
+    span {
+      padding: 5px 10px;
+    }
+  }
+
+  // Figure is used to wrap the logo
+  figure {
+    max-width: 200px;
+
+    img {
+      width: 100%;
+    }
+
+    @include media(mobile) {
+      width: 40%;
+    }
+  }
+
+  details {
+    summary {
+      color: $white;
+    }
+
+    .panel {
+      border-left-color: $white;
+    }
+
+    p,
+    ul {
+      font-size: 1em;
+    }
+  }
+}
+
+// Hub - Start page
+// ==========================================================================
+
+.hub-start {
+
+  .button {
+    @include media(tablet) {
+      margin-left: $gutter-half;
+    }
+  }
+
+  .error,
+  .validation-message {
+    background-color: transparent;
+    color: inherit;
+    @include bold-19;
+    text-decoration: none;
+    border-left: 5px solid $white;
+  }
+
+  .error {
+    border-left: 5px solid $white;
+    .block-label {
+      margin-left: 10px;
+    }
+  }
+
+  .validation-message {
+    display: inline-block;
+    padding: 15px;
+    [lang="ar"] {
+      padding-left: 20px;
+    }
+  }
+
+  .block-label {
+    @include core-24;
+    background: transparent;
+    border: 0;
+    [lang="ar"] {
+      padding-left: 20px;
+    }
+
+    &.selected {
+      background: transparent;
+    }
+
+    &:hover {
+      background-color: $link-hover-colour;
+    }
+  }
+
+}
+
+// About certified companies
+.list-companies {
+  margin-bottom: $gutter-half;
+
+  li {
+    @include inline-block;
+    width: 50%;
+
+    @include media (tablet) {
+      width: 24%;
+    }
+  }
+
+  img {
+    width: 100%;
+  }
+}

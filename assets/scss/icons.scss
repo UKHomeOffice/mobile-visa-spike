@@ -1,0 +1,54 @@
+// ==========================================================================
+// Icons
+// ==========================================================================
+
+
+.icon:before {
+  cursor: default;
+  content: '\00a0'; /* non-breaking space */
+  display: block;
+  height: 22px;
+  text-align: center;
+  vertical-align: middle;
+  width: 22px;
+}
+
+
+.icon {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+
+.icon-complete {
+  float: left;
+  margin-right: 10px;
+  overflow: hidden;
+  background-image: url("../images/icons/icon-complete.png");
+  display: block;
+}
+
+.icon-important {
+  clear: left;
+  width: auto;
+  height: auto;
+}
+
+.icon-important span { /* display the icon for both languages */
+  background-image: url("../images/icons/icon-important-2x.png");
+  background-repeat: no-repeat;
+  background-size: 34px;
+  background-position: left top;
+  height: auto;
+  padding-left: 42px;
+  margin-bottom: 1.125em;
+  margin-top: 1.125em;
+  width: auto;
+}
+
+.icon-important span[lang="ar"] {
+  background-position: right top;
+  padding-left: 0;
+  padding-right: 42px;
+}

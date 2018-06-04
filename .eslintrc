@@ -1,0 +1,40 @@
+# 0 - disable
+#     Rules that more harmful than useful, or just buggy.
+#
+# 1 - warning
+#     Rules that we didn't encounter yet.
+#     You can safely ignore them, but I'd like to know
+#     any interesting use-cases they forbid.
+#
+# 2 - error
+#     Rules that have proven to be useful, please follow them.
+#
+
+extends:
+- "homeoffice/config/default"
+
+globals:
+  __base: true
+env:
+  es6: true
+  node: true
+rules:
+  # important ones
+  no-undef: 2
+  no-underscore-dangle: 2
+  no-warning-comments: 2
+  no-redeclare: 2
+  no-unused-vars: [2, 'local']
+  quotes: [2, 'single', { "allowTemplateLiterals": true }]
+  indent: ['error', 2]
+  # less important ones
+  new-cap: 1 # new Foo()
+  no-bitwise: 1 # no x &= y; for you
+  no-debugger: 1
+  no-console: 1
+  no-process-env: 0
+  consistent-return: 0
+  # no-reserved-keys: 2 # disallow reserved words being used as object literal keys (off by default)
+  filenames/match-regex: [2, "^[a-z0-9-.]+$", true]
+  space-before-function-paren: 0
+

@@ -1,0 +1,33 @@
+{{<layout}}
+
+{{$pageTitleText}}{{#t}}en.pages.download-error.title{{/t}}{{/pageTitleText}}
+
+{{$validationSummary}}
+{{> partials-validation-summary}}
+{{/validationSummary}}
+
+{{$propositionHeader}}
+{{> partials-navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+<h1 class="heading-large form-title">{{#t}}pages.download-error.title{{/t}}</h1>
+
+<strong>{{#t}}en.pages.download-error.summary{{/t}}</strong>
+<ul class="list-bullet">
+  <li><p>{{#t}}en.pages.download-error.point-1{{/t}}</p></li>
+  <li><p>{{#t}}en.pages.download-error.point-2{{/t}}</p></li>
+</ul>
+<strong lang="ar">{{#t}}ar.pages.download-error.summary{{/t}}</strong>
+<ul lang="ar">
+  <li><p>{{#t}}ar.pages.download-error.point-1{{/t}}</p></li>
+  <li><p>{{#t}}ar.pages.download-error.point-2{{/t}}</p></li>
+</ul>
+
+<a href="/{{startLink}}" id="start-again" class="button" role="button">
+{{#t}}buttons.finished{{/t}}</a>
+
+{{/content}}
+
+{{/layout}}

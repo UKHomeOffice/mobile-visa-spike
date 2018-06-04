@@ -1,0 +1,19 @@
+{
+  "passport-number": {
+    "label": "What is your passport number?",
+    "hint": "Use the number on your passport photo page. Include any starting zeros"
+  },
+  "date-of-birth": {
+    "legend": "What is your date of birth?",
+    "hint": "Enter what is written in your passport. For example, 22 3 1979"
+  },
+  "date-of-birth-day": {
+    "label": "Day"
+  },
+  "date-of-birth-month": {
+    "label": "Month"
+  },
+  "date-of-birth-year": {
+    "label": "Year"
+  }
+}

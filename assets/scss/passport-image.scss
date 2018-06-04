@@ -1,0 +1,74 @@
+#passport-image-group {
+  float: left;
+  max-width: 30%;
+  @include media(mobile) {
+    max-width: 100%;
+    float: none;
+    span {
+      max-width: 40%;
+      &[lang="en"] {
+        text-align: left;
+      }
+      &[lang="ar"] {
+        text-align: right;
+      }
+    }
+  }
+  input {
+    margin-top: 10px;
+    margin-left: -50px;
+  }
+}
+.passport-upload-guidance {
+  box-sizing: border-box;
+  background-color: #eeeff0;
+  overflow: hidden;
+  padding: 20px;
+}
+
+.passport-upload-guidance-image {
+  float: left;
+  width: 330px;
+  padding: 0px 10px;
+}
+
+.passport-upload-guidance-text {
+  float: left;
+  padding-right: 20px;
+  width: 29%;
+  &[lang='ar'] {
+    float: right;
+    padding-right: 0;
+  }
+}
+
+.passport-upload-requirements {
+  margin: 20px 0;
+  overflow: hidden;
+
+  div {
+    float: left;
+    padding: 0;
+    width: 50%;
+  }
+
+  ul {
+    list-style-type: initial;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 1010px) {
+  .passport-upload-guidance-image {
+    width: 100%;
+  }
+
+  .passport-upload-guidance-text {
+    padding: 20px 0 0;
+    width: 48%;
+  }
+}
+
+.check-passport-image {
+  width: 100%;
+}

@@ -1,0 +1,40 @@
+{{<layout}}
+
+{{$pageTitleText}}{{#t}}en.pages.download-your-evw.header{{/t}}{{/pageTitleText}}
+
+{{$validationSummary}}
+{{> partials-validation-summary}}
+{{/validationSummary}}
+
+{{$propositionHeader}}
+{{> partials-navigation}}
+{{/propositionHeader}}
+
+{{$content}}
+
+<header>
+  <h1 class="heading-large">{{#t}}pages.download-your-evw.header{{/t}}</h1>
+</header>
+
+<p class="icon-important">
+  {{#t}}pages.download-your-evw.notice{{/t}}
+</p>
+
+{{<partials-form}}
+
+{{$form}}
+
+<div id="download">
+    <a class="button" href="/public/images/sample.png" download="sample.png">
+      <span lang="en">Download your EVW</span>
+      <span lang="ar">نزل الإعفاء الإلكتروني من التأشيرة.</span>
+    </a>
+</div>
+
+{{/form}}
+
+{{/partials-form}}
+
+{{/content}}
+
+{{/layout}}

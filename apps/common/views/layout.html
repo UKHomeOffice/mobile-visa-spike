@@ -1,0 +1,47 @@
+{{< govuk-template}}
+
+{{$cookieMessage}}GOV.UK uses cookies to make the site simpler. <a href="https://www.gov.uk/help/cookies">Find out more about cookies</a>{{/cookieMessage}}
+
+{{$head}}
+    {{> partials-head}}
+{{/head}}
+
+{{$journeyHeader}}Electronic visa waiver{{/journeyHeader}}
+
+{{$pageTitle}}
+    {{$header}}{{/header}}
+    {{$pageTitleText}}{{/pageTitleText}}
+{{/pageTitle}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+{{$insideHeader}}{{/insideHeader}}
+
+{{$maincontentClass}}column-full{{/maincontentClass}}
+
+{{$main}}
+  <main id="content" class="main" role="main">
+    <div class="phase-banner">
+      <p>
+        <strong class="phase-tag">BETA</strong>
+        <span>This is a new service – your <a href="mailto:evw-contactus@homeoffice.gsi.gov.uk?subject=EVW Self Serve Beta feedback">feedback</a> will help us to improve it.</span>
+      </p>
+    </div>
+    <div class="grid-row">
+        {{>partials-maincontent}}
+    </div>
+
+     {{> partials-gatag}}
+
+    <script type="text/javascript" src="{{assetPath}}/js/bundle.js"></script>
+  </main>
+{{/main}}
+
+{{$footerSupportLinks}}
+  <ul>
+    <li><a href="/terms-and-conditions" target="_blank">Terms and conditions</a></li>
+    <li><a href="/privacy-policy" target="_blank">Privacy policy</a></li>
+    <li><a href="/cookies" target="_blank">Cookies</a></li>
+  </ul>
+{{/footerSupportLinks}}
+
+{{/ govuk-template}}

@@ -1,0 +1,7 @@
+node_modules
+acceptance_tests
+public
+assets/js/start
+apps/**/translations/**/default.json
+test
+coverage
