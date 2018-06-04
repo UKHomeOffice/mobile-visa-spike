@@ -1,0 +1,24 @@
+.DS_Store
+node_modules
+public
+apps/*/translations/en/default.json
+apps/*/translations/ar/default.json
+apps/**/translations/ar/default.json
+selenium-debug.log
+npm-debug.log
+.DS_Store
+.idea
+reports
+coverage/
+version.conf
+*.rpm
+build/usr
+package-lock.json
+
+# govuk toolkit and elements
+assets/scss/colours
+assets/scss/design-patterns/
+assets/scss/elements/
+assets/scss/_*
+# we want to track changes in base sass file
+!assets/scss/_base.scss
