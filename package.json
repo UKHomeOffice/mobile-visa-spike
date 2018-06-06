@@ -31,7 +31,7 @@
     "compile:sass": "npm-sass ./assets/scss/app.scss > ./public/css/app.css",
     "create:public": "mkdir -p ./public/js ./public/css ./public/images",
     "hof-transpile": "hof-transpiler ./apps/**/translations/src -w --shared ./apps/common/translations/src",
-    "postinstall": "precommit install; npm run create:public; npm run copy:styles; npm run copy:sass; npm run compile:sass; npm run browserify; npm run copy:images; npm run hof-transpile"
+    "postinstall": "precommit install; npm run create:public; npm run copy:styles; npm run compile:sass; npm run browserify; npm run copy:images; npm run hof-transpile"
   },
   "author": "HomeOffice",
   "dependencies": {
