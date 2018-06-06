@@ -23,7 +23,6 @@ app.use(mongoSession);
 // parse cookies
 app.use(require('cookie-parser')(config.session.secret));
 
-
 // log http requests
 app.use(httplog);
 
