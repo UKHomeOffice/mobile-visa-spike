@@ -16,9 +16,10 @@ build/usr
 package-lock.json
 
 # govuk toolkit and elements
-assets/scss/colours
-assets/scss/design-patterns/
-assets/scss/elements/
-assets/scss/_*
+# For now do you not ignore sass files
+# assets/scss/colours
+# assets/scss/design-patterns/
+# assets/scss/elements/
+# assets/scss/_*
 # we want to track changes in base sass file
 !assets/scss/_base.scss

@@ -1,0 +1,93 @@
+// Lists
+// ==========================================================================
+ul,
+ol {
+  list-style-type: none;
+  padding: 0 0 0 20px;
+}
+
+.error-summary {
+  [lang='en'] {
+    float: left;
+  }
+  [lang='ar'] {
+    width: 48%;
+    .error-summary-list {
+      padding-left: 0;
+    }
+  }
+}
+
+// Bulleted lists
+.list-bullet {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+// flip for Arabic
+[lang="ar"] .list-bullet,
+.list-bullet [lang="ar"],
+.list-bullet[lang="ar"] {
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+// Numbered lists
+.list-number {
+  list-style-type: decimal;
+  margin-left: 25px;
+}
+
+.list-bullet,
+.list-number {
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.list-bullet li,
+.list-number li {
+  margin-bottom: 5px;
+}
+
+.counter-list {
+  counter-reset: counter-list;
+  li {
+    position: relative;
+    padding: 4px 0 10px 60px;
+    &:before {
+      content: counter(counter-list);
+      counter-increment: counter-list;
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-size: 1.5em;
+      font-weight: bold;
+      background: #000;
+      color: #fff;
+      border-radius: 50%;
+      display: inline-block;
+      height: 42px;
+      width: 42px;
+      text-align: center;
+      line-height: 44px;
+      margin-top: 5px;
+    }
+  }
+}
+
+[dir="rtl"] .counter-list {
+  li {
+    padding: 4px 60px 10px 0;
+    &:before {
+      content: counter(counter-list, arabic-indic);
+      counter-increment: counter-list;
+      right: 0;
+      left: auto;
+    }
+  }
+}
+
+.check-your-name-list {
+  width: 50%;
+  float: left;
+}

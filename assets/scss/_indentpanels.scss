@@ -1,0 +1,73 @@
+// Indented panels
+// ==========================================================================
+
+@mixin contain-floats {
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  // @include ie-lte(7) {
+  //   zoom: 1;
+  // }
+}
+
+// Indented panels with a grey left hand border
+.panel-indent {
+  * {
+    box-sizing: border-box;
+  }
+  @include contain-floats;
+  clear: both;
+  border-left: 10px solid $border-colour;
+  padding: 0 0 0 $gutter-half;
+
+  // fix for form date labels *inside* panel-indents
+  .form-date {
+    label span[lang="ar"] {
+      clear: left;
+    }
+  }
+
+  legend {
+    margin-top: 0;
+  }
+
+  .keyline {
+    margin-right: $gutter-half;
+  }
+}
+
+// Arabic indented panel fiddling
+[lang="ar"] .panel-indent,
+.form-group.panel-indent,
+.panel-indent.split-spans {
+  border-right: 10px solid $border-colour;
+  padding-right: $gutter-half;
+}
+
+.form-group-error.panel-indent,
+.form-group-error.panel-indent span {
+  border-color: $error-colour;
+}
+
+// Remove bottom margin on last paragraph
+.panel-indent p:only-child,
+.panel-indent p:last-child {
+  margin-bottom: 0;
+}
+
+.panel-indent .form-group:last-child {
+  margin-bottom: 0;
+}
+
+[lang='ar'] .panel-indent,
+.panel-indent [lang='ar'] {
+  border-left: none;
+  padding-left: 0;
+}
+
+.panel-indent .list[lang="ar"] {
+  margin-right: $gutter-half;
+  margin-left: -$gutter-half;
+}

@@ -1,0 +1,103 @@
+.form-group {
+    // Margins taken from .heading-medium in elements_typography
+    margin-top: em(25, 20);
+    margin-bottom: em(10, 20);
+
+    legend {
+        // Margins taken from .heading-medium in elements_typography
+        margin-bottom: em(10, 20);
+        float: left;
+        width: 100%;
+
+        span {
+            @include bold-19;
+        }
+    }
+
+    /* Prevent checkbox labels getting a big height applied to them when an error is displayed */
+    &.validation-error label span.visuallyhidden {
+        position: absolute;
+    }
+}
+
+// Custom radio buttons & checkboxes
+.hub-start {
+  .block-label {
+    background-color: transparent;
+    border: 0;
+    padding-left: 54px;
+
+    [type="checkbox"],
+    [type="radio"] {
+      border: 0;
+      clip: rect(0 0 0 0);
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      right: 50px;
+      height: 1px;
+      width: 1px;
+    }
+
+    [type="checkbox"] + div,
+    [type="radio"] + div {
+      position: absolute;
+      left: 17px;
+      top: 14px;
+      background: $white;
+      display: inline-block;
+      border: 2px solid $black;
+      @include border-radius(20px);
+      @include media(tablet) {
+        width: 25px;
+        height: 25px;
+        left: 14px;
+        top: 16px;
+      }
+
+      .inner {
+        display: inherit;
+        @include border-radius(20px);
+        border: 3px solid $white;
+        width: 16px;
+        height: 16px;
+
+        @include media(tablet) {
+          width: 19px;
+          height: 19px;
+        }
+      }
+    }
+
+    [type="checkbox"] + div {
+      @include border-radius(0);
+      .inner {
+        @include border-radius(0);
+      }
+    }
+
+    [type="radio"]:focus + div,
+    [type="checkbox"]:focus + div {
+      .inner {
+        border-color: $yellow;
+      }
+    }
+
+    &.selected [type="radio"] + div,
+    [type="radio"]:checked + div {
+      background: $black;
+    }
+
+    &.selected [type="checkbox"] + div,
+    [type="checkbox"]:checked + div {
+      .inner {
+        background: image-url('icons/checkbox-tick-mobile.png') 0 0 no-repeat;
+
+        @include media(tablet) {
+          background: image-url('icons/checkbox-tick.png') 0 0 no-repeat;
+        }
+      }
+    }
+  }
+}
